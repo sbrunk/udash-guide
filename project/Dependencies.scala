@@ -7,7 +7,7 @@ object Dependencies {
   val versionOfScala = "2.12.6"
   val jettyVersion = "9.4.10.v20180503"
 
-  val udashVersion = "0.7.1"
+  val udashVersion = "0.8.0-SNAPSHOT"
   val udashJQueryVersion = "1.2.0"
   val highchartsVersion = "5.0.10"
 
