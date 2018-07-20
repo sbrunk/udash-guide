@@ -103,7 +103,7 @@ class EchoRestDemoComponent extends Component {
         UdashInputGroup.input(
           TextInput(content)(id := "echo-rest-demo-input").render
         ),
-        UdashInputGroup.buttons(
+        UdashInputGroup.append(
           queryButton.render,
           headerButton.render,
           urlButton.render,

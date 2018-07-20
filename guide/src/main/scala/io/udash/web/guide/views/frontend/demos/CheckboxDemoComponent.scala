@@ -28,23 +28,23 @@ class CheckboxDemoComponent extends Component {
   private def inputs = div(BootstrapStyles.row)(
     div(BootstrapStyles.Grid.colMd4)(
       UdashInputGroup()(
-        UdashInputGroup.addon("Property A:"),
-        UdashInputGroup.addon(Checkbox(propA)(cls := "checkbox-demo-a").render),
-        UdashInputGroup.addon(bind(propA))
+        UdashInputGroup.prependText("Property A:"),
+        UdashInputGroup.prepend(Checkbox(propA)(cls := "checkbox-demo-a").render),
+        UdashInputGroup.append(bind(propA))
       ).render
     ),
     div(BootstrapStyles.Grid.colMd4)(
       UdashInputGroup()(
-        UdashInputGroup.addon("Property B:"),
-        UdashInputGroup.addon(Checkbox(propB)(cls := "checkbox-demo-b").render),
-        UdashInputGroup.addon(bind(propB))
+        UdashInputGroup.prependText("Property B:"),
+        UdashInputGroup.prepend(Checkbox(propB)(cls := "checkbox-demo-b").render),
+        UdashInputGroup.appendText(bind(propB))
       ).render
     ),
     div(BootstrapStyles.Grid.colMd4)(
       UdashInputGroup()(
-        UdashInputGroup.addon("Property C:"),
-        UdashInputGroup.addon(Checkbox(propCAsBoolean)(cls := "checkbox-demo-c").render),
-        UdashInputGroup.addon(bind(propC))
+        UdashInputGroup.prependText("Property C:"),
+        UdashInputGroup.append(Checkbox(propCAsBoolean)(cls := "checkbox-demo-c").render),
+        UdashInputGroup.appendText(bind(propC))
       ).render
     )
   )

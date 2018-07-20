@@ -104,15 +104,15 @@ class IntroFormDemoComponent extends Component {
           // input synchronised with the model
           NumberInput(minimum)(id := "minimum").render
         ),
-        UdashInputGroup.addon(" <= "),
+        UdashInputGroup.prependText(" <= "),
         UdashInputGroup.input(
           NumberInput(between)(id := "between").render
         ),
-        UdashInputGroup.addon(" <= "),
+        UdashInputGroup.prependText(" <= "),
         UdashInputGroup.input(
           NumberInput(maximum)(id := "maximum").render
         ),
-        UdashInputGroup.buttons(
+        UdashInputGroup.append(
           randomizeButton.render
         )
       ).render,

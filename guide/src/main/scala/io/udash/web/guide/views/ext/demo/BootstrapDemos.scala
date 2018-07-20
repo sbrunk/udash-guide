@@ -116,7 +116,7 @@ object BootstrapDemos extends CrossLogging with CssView {
       UdashDatePicker.loadBootstrapDatePickerStyles(),
       UdashInputGroup()(
         UdashInputGroup.input(picker.render),
-        UdashInputGroup.addon(bind(date.transform(_.toString)))
+        UdashInputGroup.append(bind(date.transform(_.toString)))
       ).render,
       hr,
       UdashForm(
@@ -167,9 +167,9 @@ object BootstrapDemos extends CrossLogging with CssView {
     div(GuideStyles.frame)(
       UdashDatePicker.loadBootstrapDatePickerStyles(),
       UdashInputGroup()(
-        UdashInputGroup.addon("From"),
+        UdashInputGroup.prepend("From"),
         UdashInputGroup.input(fromPicker.render),
-        UdashInputGroup.addon("to"),
+        UdashInputGroup.prepend("to"),
         UdashInputGroup.input(toPicker.render)
       ).render
     ).render
@@ -407,9 +407,9 @@ object BootstrapDemos extends CrossLogging with CssView {
     div(GuideStyles.frame)(
       label("Your URL"),
       UdashInputGroup(InputGroupSize.Large)(
-        UdashInputGroup.addon("https://example.com/users/", bind(vanityUrl)),
+        UdashInputGroup.prepend("https://example.com/users/", bind(vanityUrl)),
         UdashInputGroup.input(TextInput(vanityUrl)().render),
-        UdashInputGroup.buttons(
+        UdashInputGroup.append(
           UdashButton(
             disabled = buttonDisabled
           )("Go!").render,
@@ -485,13 +485,13 @@ object BootstrapDemos extends CrossLogging with CssView {
       UdashForm.inline(
         UdashForm.group(
           UdashInputGroup()(
-            UdashInputGroup.addon("Search: "),
+            UdashInputGroup.prepend("Search: "),
             UdashInputGroup.input(TextInput(search)().render)
           ).render
         ),
         UdashForm.group(
           UdashInputGroup()(
-            UdashInputGroup.addon("Something: "),
+            UdashInputGroup.prepend("Something: "),
             UdashInputGroup.input(TextInput(something)().render)
           ).render
         )

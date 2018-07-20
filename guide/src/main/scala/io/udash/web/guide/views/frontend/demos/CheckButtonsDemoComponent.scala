@@ -39,14 +39,14 @@ class CheckButtonsDemoComponent extends Component {
 
   def checkboxes() =
     UdashInputGroup()(
-      UdashInputGroup.addon("Fruits:"),
-      UdashInputGroup.addon(
+      UdashInputGroup.prependText("Fruits:"),
+      UdashInputGroup.append(
         CheckButtons(
           favoriteFruitsStrings, Seq(Apple, Orange, Banana).map(_.toString).toSeqProperty
         )((els: Seq[(Input, String)]) => span(els.map {
           case (i: Input, l: String) => label(BootstrapStyles.Form.checkboxInline, attr("data-label") := l)(i, l)
         }).render).render
       ),
-      UdashInputGroup.addon(span(cls := "check-buttons-demo-fruits")(bind(favoriteFruits)))
+      UdashInputGroup.appendText(span(cls := "check-buttons-demo-fruits")(bind(favoriteFruits)))
     ).render
 }

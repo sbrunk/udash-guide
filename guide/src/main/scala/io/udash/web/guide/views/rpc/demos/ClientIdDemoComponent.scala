@@ -1,6 +1,7 @@
 package io.udash.web.guide.views.rpc.demos
 
 import io.udash._
+import io.udash.bootstrap.BootstrapStyles
 import io.udash.bootstrap.UdashBootstrap.ComponentId
 import io.udash.bootstrap.button.{ButtonStyle, UdashButton}
 import io.udash.bootstrap.form.UdashInputGroup
@@ -50,11 +51,13 @@ class ClientIdDemoComponent extends Component {
 
     def render: Modifier = span(GuideStyles.frame, GuideStyles.useBootstrap)(
       UdashInputGroup()(
-        UdashInputGroup.addon(
-          "Your client id: ",
-          produce(model)(cid => span(id := "client-id-demo-response", cid).render)
+        UdashInputGroup.prepend(
+          span(BootstrapStyles.Form.inputGroupText)(
+            "Your client id: ",
+            produce(model)(cid => span(id := "client-id-demo-response", cid).render)
+          )
         ),
-        UdashInputGroup.buttons(loadIdButton.render)
+        UdashInputGroup.append(loadIdButton.render)
       ).render
     )
   }

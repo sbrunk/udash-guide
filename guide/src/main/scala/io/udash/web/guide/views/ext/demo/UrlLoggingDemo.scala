@@ -24,8 +24,8 @@ object UrlLoggingDemo {
         div(BootstrapStyles.row)(
           div(BootstrapStyles.Grid.colMd4)(
             div(BootstrapStyles.Form.inputGroup)(
-              div(BootstrapStyles.Form.inputGroupAddon)("Turn on logging:"),
-              div(BootstrapStyles.Form.inputGroupAddon)(Checkbox(UrlLoggingDemo.enabled)(cls := "checkbox-demo-a"))
+              div(BootstrapStyles.Form.inputGroupPrepend)("Turn on logging:"),
+              div(BootstrapStyles.Form.inputGroupAppend)(Checkbox(UrlLoggingDemo.enabled)(cls := "checkbox-demo-a"))
             )
           )
         )

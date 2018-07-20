@@ -34,7 +34,7 @@ object Dependencies {
     "io.udash" %%% "udash-rpc-frontend" % udashVersion,
     "io.udash" %%% "udash-i18n-frontend" % udashVersion,
     "io.udash" %%% "udash-jquery" % udashJQueryVersion,
-    "io.udash" %%% "udash-bootstrap" % udashVersion,
+    "io.udash" %%% "udash-bootstrap4" % udashVersion,
     "io.udash" %%% "udash-charts" % udashVersion,
     "io.udash" %%% "udash-css-frontend" % udashVersion
   ))

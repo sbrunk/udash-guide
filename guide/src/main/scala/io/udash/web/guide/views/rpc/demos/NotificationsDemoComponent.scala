@@ -81,13 +81,13 @@ class NotificationsDemoComponent extends Component {
 
     def render: Modifier = span(GuideStyles.frame, GuideStyles.useBootstrap)(
       UdashInputGroup()(
-        UdashInputGroup.addon(
+        UdashInputGroup.prepend(
           span(id := "notifications-demo-response")(
             "Last message: ",
             bind(model.subProp(_.lastMessage))
           )
         ),
-        UdashInputGroup.buttons(registerButton.render)
+        UdashInputGroup.append(registerButton.render)
       ).render
     )
   }

@@ -43,12 +43,14 @@ class SelectDemoComponent extends Component {
 
   def selector() =
     UdashInputGroup()(
-      UdashInputGroup.addon("Fruits:"),
-      UdashInputGroup.addon(
-        Select(
-          favoriteFruitString, Seq(Apple, Orange, Banana).map(_.toString).toSeqProperty
-        )(Select.defaultLabel, BootstrapStyles.Form.formControl).render
+      UdashInputGroup.prependText("Fruits:"),
+      UdashInputGroup.append(
+        div(BootstrapStyles.Form.inputGroupText)(
+          Select(
+            favoriteFruitString, Seq(Apple, Orange, Banana).map(_.toString).toSeqProperty
+          )(Select.defaultLabel, BootstrapStyles.Form.formControl).render
+        )
       ),
-      UdashInputGroup.addon(span(cls := "select-demo-fruits")(bind(favoriteFruit)))
+      UdashInputGroup.appendText(span(cls := "select-demo-fruits")(bind(favoriteFruit)))
     ).render
 }

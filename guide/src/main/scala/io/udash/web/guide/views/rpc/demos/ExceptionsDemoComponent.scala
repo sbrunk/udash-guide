@@ -111,25 +111,25 @@ class ExceptionsDemoComponent extends Component {
 
     def render: Modifier = span(GuideStyles.frame, GuideStyles.useBootstrap)(
       UdashInputGroup()(
-        UdashInputGroup.addon(
+        UdashInputGroup.prepend(
           "Result: ",
           produce(model.subProp(_.exception))(v => span(id := "exception-demo-response", v).render)
         ),
-        UdashInputGroup.buttons(exceptionButton.render)
+        UdashInputGroup.append(exceptionButton.render)
       ).render, br,
       UdashInputGroup()(
-        UdashInputGroup.addon(
+        UdashInputGroup.prepend(
           "Result: ",
           produce(model.subProp(_.translatableException))(v => span(id := "translatable-exception-demo-response")(translated(v())).render)
         ),
-        UdashInputGroup.buttons(translatableExceptionButton.render)
+        UdashInputGroup.append(translatableExceptionButton.render)
       ).render, br,
       UdashInputGroup()(
-        UdashInputGroup.addon(
+        UdashInputGroup.prepend(
           "Result: ",
           produce(model.subProp(_.unknownException))(v => span(id := "unknown-exception-demo-response", v).render)
         ),
-        UdashInputGroup.buttons(unknownExceptionButton.render)
+        UdashInputGroup.append(unknownExceptionButton.render)
       ).render
     )
   }
